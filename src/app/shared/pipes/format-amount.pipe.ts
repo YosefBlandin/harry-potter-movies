@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class FormatAmountPipe implements PipeTransform {
-  transform(value: string, ...args: unknown[]): unknown {
+  transform(value: string, ...args: unknown[]): string {
     if (this.isStrNumeric(value)) {
       return `$${value} million`;
     }
@@ -14,7 +14,7 @@ export class FormatAmountPipe implements PipeTransform {
   }
 
   private isStrNumeric(value: string): boolean {
-    const valueParsed = parseInt(value);
+    const valueParsed: number = parseInt(value);
 
     if (typeof valueParsed === 'number' && !isNaN(valueParsed)) {
       return true;

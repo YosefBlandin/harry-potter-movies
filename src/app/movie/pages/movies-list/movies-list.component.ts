@@ -45,7 +45,8 @@ export class MoviesListComponent implements OnInit {
     private moviesService: MoviesService,
     private formBuilder: FormBuilder
   ) {}
-  private searchCriterias$: any = new BehaviorSubject<any>([]);
+  private searchCriterias$: BehaviorSubject<SearchCriteria[]> =
+    new BehaviorSubject<SearchCriteria[]>([]);
   private movies$: BehaviorSubject<Movies> = new BehaviorSubject<Movies>([]);
   public filtersBarForm: FormGroup<{
     title: FormControl<string>;
@@ -69,16 +70,13 @@ export class MoviesListComponent implements OnInit {
     ]).pipe(
       map(([movies, criteriasObj]) =>
         movies.filter((movie: Movie) => {
-          return this.filterMovieByCriterias(
-            criteriasObj as SearchCriteria,
-            movie
-          );
+          return this.matchCriterias(criteriasObj as SearchCriteria, movie);
         })
       )
     );
   }
 
-  public filterMovieByCriterias(criteriasObj: SearchCriteria, movie: Movie) {
+  public matchCriterias(criteriasObj: SearchCriteria, movie: Movie): boolean {
     return Object.keys(criteriasObj).every((key: string) => {
       return String(movie[key as keyof Movie])
         .toLowerCase()
