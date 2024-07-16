@@ -69,18 +69,25 @@ export class MoviesListComponent implements OnInit {
     ]).pipe(
       map(([movies, criteriasObj]) =>
         movies.filter((movie: Movie) => {
-          return Object.keys(criteriasObj).every((key: string) => {
-            return String(movie[key as keyof Movie])
-              .toLowerCase()
-              .includes(
-                (criteriasObj as SearchCriteria)[
-                  key as keyof SearchCriteria
-                ].toLowerCase()
-              );
-          });
+          return this.filterMovieByCriterias(
+            criteriasObj as SearchCriteria,
+            movie
+          );
         })
       )
     );
+  }
+
+  public filterMovieByCriterias(criteriasObj: SearchCriteria, movie: Movie) {
+    return Object.keys(criteriasObj).every((key: string) => {
+      return String(movie[key as keyof Movie])
+        .toLowerCase()
+        .includes(
+          (criteriasObj as SearchCriteria)[
+            key as keyof SearchCriteria
+          ].toLowerCase()
+        );
+    });
   }
 
   public handleSearch(criterias: SearchCriteria[]): void {
