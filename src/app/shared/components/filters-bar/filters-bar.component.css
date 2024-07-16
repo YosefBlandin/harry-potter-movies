@@ -1,0 +1,26 @@
+.filters-bar {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+}
+
+.filters-bar__inputs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  row-gap: 20px;
+  padding: 20px 10px;
+}
+
+.filters-bar__inputs-container .filters-bar__inputs-container {
+  label {
+    color: rgb(80, 80, 80);
+    font-weight: 500;
+  }
+}
+
+.filters-bar-input input {
+  padding: 4px 10px;
+  border: none;
+}
