@@ -1,0 +1,20 @@
+.movies-list__list-element {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+}
+
+.movies-list__list-element .list-element__details-container {
+  display: flex;
+  column-gap: 20px;
+}
+
+.movies-list .movies-list__list-element .list-element__details-button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #ededed;
+}
+
+.movies-list .movies-list__list-element .list-element__title {
+  margin: 0;
+}

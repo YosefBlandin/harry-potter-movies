@@ -1,15 +1,7 @@
 import { NgFor, NgForOf } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  inject,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   ControlContainer,
-  FormBuilder,
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';

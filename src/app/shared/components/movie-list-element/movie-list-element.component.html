@@ -1,0 +1,26 @@
+<li *ngIf="movie" class="movies-list__list-element">
+  <section>
+    <p class="list-element__title">
+      <strong>{{ movie.title }}</strong>
+    </p>
+    <div class="list-element__details-container">
+      <span
+        ><small>Release date: {{ movie.release_date }}</small></span
+      >
+      <span
+        ><small>Budget: {{ movie.budget | formatAmount }}</small></span
+      >
+      <span
+        ><small>Duration: {{ movie.duration | formatDuration }}</small></span
+      >
+    </div>
+  </section>
+
+  <button
+    class="list-element__details-button"
+    type="button"
+    [routerLink]="movie.id"
+  >
+    Details
+  </button>
+</li>

@@ -20,6 +20,7 @@ import {
 import { SearchCriteria } from '../../../core/models/search';
 import { FormatAmountPipe } from '../../../shared/pipes/format-amount.pipe';
 import { FormatDurationPipe } from '../../../shared/pipes/format-duration.pipe';
+import { MovieListElementComponent } from '../../../shared/components/movie-list-element/movie-list-element.component';
 
 @Component({
   selector: 'app-movies-list',
@@ -34,6 +35,7 @@ import { FormatDurationPipe } from '../../../shared/pipes/format-duration.pipe';
     ReactiveFormsModule,
     FormatAmountPipe,
     FormatDurationPipe,
+    MovieListElementComponent,
   ],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.css',
