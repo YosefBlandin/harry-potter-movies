@@ -13,10 +13,12 @@
             ><small>Release date: {{ movie.release_date }}</small></span
           >
           <span
-            ><small>Budget: ${{ movie.budget }}</small></span
+            ><small>Budget: {{ movie.budget | formatAmount }}</small></span
           >
           <span
-            ><small>Duration: {{ movie.duration }}</small></span
+            ><small
+              >Duration: {{ movie.duration | formatDuration }}</small
+            ></span
           >
         </div>
       </section>

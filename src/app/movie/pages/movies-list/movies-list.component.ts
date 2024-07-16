@@ -18,6 +18,8 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { SearchCriteria } from '../../../core/models/search';
+import { FormatAmountPipe } from '../../../shared/pipes/format-amount.pipe';
+import { FormatDurationPipe } from '../../../shared/pipes/format-duration.pipe';
 
 @Component({
   selector: 'app-movies-list',
@@ -30,6 +32,8 @@ import { SearchCriteria } from '../../../core/models/search';
     RouterLink,
     FiltersBarComponent,
     ReactiveFormsModule,
+    FormatAmountPipe,
+    FormatDurationPipe,
   ],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.css',

@@ -15,7 +15,7 @@
 .movies-container .movies-list .movies-list__list-element {
   display: flex;
   justify-content: space-between;
-  padding: 10px 5px;
+  padding: 10px 25px;
 }
 
 .movies-list__list-element .list-element__details-container {
